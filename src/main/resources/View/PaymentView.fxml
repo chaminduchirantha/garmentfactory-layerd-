@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="PaymentAnchorPane" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #fff; -fx-border-color: #1e272e; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.factory_mvc_projecct.controller.PaymentController">
+   <children>
+      <Label fx:id="lblDilivaryId" layoutX="570.0" layoutY="161.0" prefHeight="26.0" prefWidth="77.0" text="Supplier Id">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblDiscount" layoutX="30.0" layoutY="152.0" prefHeight="26.0" prefWidth="135.0" text="Discount">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblPrice" layoutX="30.0" layoutY="203.0" prefHeight="26.0" prefWidth="107.0" text="Payment Price">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtDiscount" layoutX="166.0" layoutY="148.0" prefHeight="26.0" prefWidth="107.0" promptText="00%" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtPrice" layoutX="165.0" layoutY="202.0" prefHeight="26.0" prefWidth="174.0" promptText="000,000.00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <Button fx:id="buttSave" layoutX="491.0" layoutY="322.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #3498db; -fx-background-radius: 6; -fx-background-color: #2ecc71;" text="Save" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttUpdate" layoutX="587.0" layoutY="322.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #3498db; -fx-background-radius: 6; -fx-background-color: #2ecc71;" text="Update" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttDelete" layoutX="682.0" layoutY="322.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #c0392b; -fx-background-radius: 6;" text="Delete" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttClear" layoutX="776.0" layoutY="322.0" mnemonicParsing="false" onAction="#clearONAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #3498db; -fx-background-radius: 6;" text="Clear" textFill="WHITE">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblPayment" layoutX="33.0" layoutY="399.0" onMouseClicked="#tblOnMouseClick" prefHeight="200.0" prefWidth="835.0">
+         <columns>
+            <TableColumn fx:id="colomnId" prefWidth="151.19997787475586" text="Payment Id" />
+            <TableColumn fx:id="colomnDate" prefWidth="204.8000030517578" text="Payment Date" />
+            <TableColumn fx:id="colmnDiscount" prefWidth="151.199951171875" text="Discount" />
+            <TableColumn fx:id="colomnPrice" prefWidth="153.5999755859375" text="Payment Price" />
+            <TableColumn fx:id="colomnSupId" prefWidth="176.0" text="Supplier Id" />
+         </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <DatePicker fx:id="txtDate" layoutX="669.0" layoutY="99.0" promptText="DD - MM - YYYY" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></DatePicker>
+      <Label fx:id="lbPaymentDate" layoutX="566.0" layoutY="102.0" text="Payment Date">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="32.0" layoutY="79.0" />
+      <Label fx:id="lblId" layoutX="30.0" layoutY="98.0" prefHeight="26.0" prefWidth="77.0" text="Payment Id">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtCode" layoutX="166.0" layoutY="98.0" prefHeight="26.0" prefWidth="146.0" promptText="PA00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cmbSupplierId" layoutX="670.0" layoutY="161.0" onAction="#cmbSupplierOnAction" prefHeight="26.0" prefWidth="174.0" style="-fx-background-color: #ffffff; -fx-border-color: #7367F0; -fx-border-width: 0 0 1px 0;">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></ComboBox>
+      <Label fx:id="lblSupName1" layoutX="569.0" layoutY="210.0" prefHeight="34.0" prefWidth="107.0" text="Supplier Name">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSupName" layoutX="679.0" layoutY="212.0" prefHeight="34.0" prefWidth="174.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSupPhone1" layoutX="29.0" layoutY="255.0" prefHeight="34.0" prefWidth="107.0" text="Supplier Phone">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSupNumber" layoutX="165.0" layoutY="255.0" prefHeight="34.0" prefWidth="175.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId1" layoutX="412.0" layoutY="14.0" prefHeight="28.0" prefWidth="83.0" text="Payment ">
+         <font>
+            <Font name="Segoe UI Symbol" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="374.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/icons8-payment-50.png" />
+         </image>
+      </ImageView>
+      <Line endX="34.800018310546875" endY="-3.814697265625E-6" layoutX="470.0" layoutY="43.0" startX="-100.0" stroke="#2c5cfa" />
+   </children>
+</AnchorPane>

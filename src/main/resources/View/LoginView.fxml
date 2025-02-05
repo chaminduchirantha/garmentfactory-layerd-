@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.InnerShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="LoginAnchorPane" prefHeight="721.0" prefWidth="1100.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.factory_mvc_projecct.controller.LoginViewController">
+   <children>
+      <ImageView fitHeight="648.0" fitWidth="1055.0" layoutX="41.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/8636.jpg" />
+         </image>
+      </ImageView>
+      <Label prefHeight="68.0" prefWidth="1104.0" style="-fx-background-color: #5C6BC0;" text="                                                                 Welcome To Login" textFill="#fffafa">
+         <font>
+            <Font name="Trebuchet MS" size="24.0" />
+         </font>
+      </Label>
+      <Pane fx:id="userNamePasswordAnchorePane" layoutX="316.0" layoutY="135.0" opacity="0.92" prefHeight="451.0" prefWidth="470.0" style="-fx-background-color: #ecf0f1; -fx-background-radius: 35; -fx-border-color: #2c3e50; -fx-border-radius: 35;">
+         <children>
+            <Line endX="362.4000244140625" layoutX="108.0" layoutY="56.0" startX="-108.0" />
+            <TextField fx:id="txtName" layoutX="80.0" layoutY="137.0" prefHeight="39.0" prefWidth="328.0" promptText="USER NAME" style="-fx-border-color: #2c3e50; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font></TextField>
+            <Button fx:id="loginBut" layoutX="164.0" layoutY="317.0" mnemonicParsing="false" onAction="#loginOnAction" prefHeight="38.0" prefWidth="157.0" style="-fx-background-radius: 10; -fx-background-color: CAF0F8; -fx-border-color: #2c3e50; -fx-border-radius: 10;" text="Log In">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <Line endX="369.4000244140625" endY="-3.0517578125E-5" layoutX="101.0" layoutY="379.0" startX="-100.0" />
+            <Circle fill="WHITE" layoutX="244.0" layoutY="56.0" radius="42.0" stroke="BLACK" strokeType="INSIDE" />
+            <ImageView fitHeight="40.0" fitWidth="45.0" layoutX="224.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8-user.gif" />
+               </image>
+            </ImageView>
+            <PasswordField fx:id="txtPassword" layoutX="80.0" layoutY="190.0" prefHeight="39.0" prefWidth="328.0" promptText="PASSWORD" style="-fx-border-color: #2c3e50; -fx-background-radius: 10; -fx-border-radius: 10;">
+               <font>
+                  <Font name="Calibri" size="16.0" />
+               </font></PasswordField>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="42.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                                 </image>
+            </ImageView>
+            <ImageView fitHeight="25.0" fitWidth="27.0" layoutX="42.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Image/icons8-privacy-48.png" />
+               </image>
+            </ImageView>
+         </children>
+         <effect>
+            <InnerShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Pane>
+   </children>
+</AnchorPane>

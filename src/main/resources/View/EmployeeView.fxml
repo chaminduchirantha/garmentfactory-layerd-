@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="employeeAnchorPane" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #fff; -fx-border-color: #1e272e; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.factory_mvc_projecct.controller.EmployeeController">
+   <children>
+      <Label fx:id="emLable" layoutX="273.0" layoutY="393.0">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="26.0" layoutY="100.0" text="Employee Id">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblName" layoutX="476.0" layoutY="99.0" text="Employee Name">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAge" layoutX="26.0" layoutY="204.0" prefHeight="20.0" prefWidth="107.0" text="Employee Age">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblAddress" layoutX="26.0" layoutY="153.0" prefHeight="20.0" prefWidth="133.0" text="Employee Address">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblSection" layoutX="530.0" layoutY="260.0" prefHeight="20.0" prefWidth="122.0" text="Employee Section">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNic" layoutX="26.0" layoutY="258.0" prefHeight="20.0" prefWidth="107.0" text="Employee Nic">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNumber" layoutX="476.0" layoutY="202.0" prefHeight="20.0" prefWidth="188.0" text="Employee Contact Number">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="160.0" layoutY="95.0" prefHeight="30.0" prefWidth="142.0" promptText="E00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtAdderess" layoutX="170.0" layoutY="142.0" prefHeight="30.0" prefWidth="708.0" promptText="No-" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TableView fx:id="tblEmployee" layoutX="14.0" layoutY="408.0" onMouseClicked="#tblEmployeeOnMouseClicked" prefHeight="212.0" prefWidth="870.0">
+         <columns>
+            <TableColumn minWidth="0.0" prefWidth="9.5367431640625E-7" text="C2" />
+            <TableColumn fx:id="idColomn" prefWidth="92.00003337860107" text="Employee id" />
+            <TableColumn fx:id="nameColomn" prefWidth="162.40003204345703" text="Employee Name" />
+            <TableColumn fx:id="ageColomn" prefWidth="63.199951171875" text="Age" />
+            <TableColumn fx:id="addressColomn" prefWidth="200.80001831054688" text="Employee Address" />
+            <TableColumn fx:id="sectionColmn" minWidth="0.0" prefWidth="108.79998779296875" text="section" />
+            <TableColumn fx:id="colomnNic" minWidth="0.0" prefWidth="120.800048828125" text="Nic Number" />
+            <TableColumn fx:id="phoneColomn" minWidth="0.0" prefWidth="117.60007324218748" text="  Phone" />
+         </columns>
+         <effect>
+            <Blend />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <Button fx:id="buttReport" layoutX="368.0" layoutY="342.0" mnemonicParsing="false" onAction="#reportOnAction" prefHeight="30.0" prefWidth="134.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 6;" text="Genarate Report" textFill="#ffefef">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttSave" layoutX="516.0" layoutY="342.0" mnemonicParsing="false" onAction="#saveOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 6;" text="Save" textFill="#ffefef">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttUpdate" layoutX="610.0" layoutY="342.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #2ecc71; -fx-background-radius: 6;" text="Update" textFill="#ffefef">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttDelete" layoutX="707.0" layoutY="342.0" mnemonicParsing="false" onAction="#deleteOnAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #c0392b; -fx-background-radius: 6;" text="Delete" textFill="#ffefef">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttClear" layoutX="800.0" layoutY="342.0" mnemonicParsing="false" onAction="#clearONAction" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #7f8c8d; -fx-background-radius: 6; -fx-background-color: #3498db;" text="Clear" textFill="#ffefef">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TextField fx:id="txtName" layoutX="601.0" layoutY="95.0" prefHeight="30.0" prefWidth="282.0" promptText="Employee" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="txtAge" layoutX="161.0" layoutY="195.0" prefHeight="30.0" prefWidth="122.0" promptText="00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtNic" layoutX="156.0" layoutY="246.0" prefHeight="28.0" prefWidth="259.0" promptText="00000000000" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtPhone" layoutX="666.0" layoutY="191.0" prefHeight="30.0" prefWidth="214.0" promptText="               0777777777" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <Label fx:id="lblName1" layoutX="374.0" layoutY="14.0" prefHeight="39.0" prefWidth="160.0" text="          Employee">
+         <font>
+            <Font name="Segoe UI Symbol" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="40.0" layoutX="385.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/icons8-employees-50.png" />
+         </image>
+      </ImageView>
+      <Line endX="114.800048828125" layoutX="454.0" layoutY="53.0" startX="-100.0" stroke="#43a7ff" />
+      <HBox layoutX="354.0" layoutY="338.0" prefHeight="39.0" prefWidth="122.0" />
+      <ComboBox fx:id="cmbSection" layoutX="679.0" layoutY="255.0" prefHeight="26.0" prefWidth="169.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0; -fx-background-color: #fff; -fx-scale-x: 1.2; -fx-scale-y: 1.2; -fx-scale-z: 1; -fx-translate-x: 1.2; -fx-translate-y: 1.2; -fx-translate-z: 0; -fx-opacity: 10; -fx-font-weight: bold;">
+         <effect>
+            <Blend>
+               <topInput>
+                  <ColorInput />
+               </topInput>
+            </Blend>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+   </children>
+</AnchorPane>

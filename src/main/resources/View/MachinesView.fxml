@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorInput?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="machineAnchorPane" prefHeight="650.0" prefWidth="900.0" style="-fx-background-color: #fff; -fx-border-color: #1e272e; -fx-background-radius: 10; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.gdse.factory_mvc_projecct.controller.MachinesController">
+   <children>
+      <Label fx:id="lblid" layoutX="42.0" layoutY="85.0" prefHeight="34.0" prefWidth="102.0" text="Machine Id">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblTask" layoutX="42.0" layoutY="140.0" prefHeight="34.0" prefWidth="111.0" text="Machine Task">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblName" layoutX="497.0" layoutY="89.0" prefHeight="34.0" prefWidth="131.0" text="Machine Name">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtTask" layoutX="177.0" layoutY="139.0" prefHeight="26.0" prefWidth="151.0" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <TextField fx:id="txtName" layoutX="661.0" layoutY="84.0" prefHeight="30.0" prefWidth="214.0" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font></TextField>
+      <Button fx:id="buttAdd" layoutX="428.0" layoutY="339.0" mnemonicParsing="false" onAction="#addOnAction" prefHeight="26.0" prefWidth="89.0" style="-fx-background-color: #3498db; -fx-background-radius: 6; -fx-background-color: #2ecc71;" text="Add" textFill="#fff4f4">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttRemove" layoutX="651.0" layoutY="339.0" mnemonicParsing="false" onAction="#removeOnAction" prefHeight="26.0" prefWidth="102.0" style="-fx-background-color: #c0392b; -fx-background-radius: 6;" text="Remove" textFill="#fff4f4">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttUpdate" layoutX="538.0" layoutY="339.0" mnemonicParsing="false" onAction="#updateOnAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #3498db; -fx-background-radius: 6; -fx-background-color: #2ecc71;" text="Update" textFill="#fff4f4">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="buttClear" layoutX="770.0" layoutY="339.0" mnemonicParsing="false" onAction="#clearOnAction" prefHeight="26.0" prefWidth="96.0" style="-fx-background-color: #3498db; -fx-background-radius: 6;" text="clear" textFill="#fff4f4">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <TableView fx:id="tblMachine" layoutX="30.0" layoutY="397.0" onMouseClicked="#tblOnMouseClick" prefHeight="214.0" prefWidth="845.0">
+         <columns>
+            <TableColumn fx:id="colomnId" prefWidth="136.80001258850098" text="Machine Id" />
+            <TableColumn fx:id="colomnName" prefWidth="234.4000244140625" text="Machine Name" />
+            <TableColumn fx:id="colmnTask" prefWidth="220.00003051757812" text="MachineTask Name" />
+            <TableColumn fx:id="colomnQu" prefWidth="114.4000244140625" text="Machine Quantity" />
+            <TableColumn fx:id="colomnEmId" prefWidth="136.00002441406252" text="Employee Id" />
+         </columns>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TableView>
+      <TextField fx:id="txtId" layoutX="179.0" layoutY="83.0" prefHeight="26.0" prefWidth="146.0" promptText="M00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblEmId" layoutX="500.0" layoutY="195.0" prefHeight="42.0" prefWidth="193.0" text="Employee Contact Number&#10;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmName1" layoutX="500.0" layoutY="261.0" prefHeight="34.0" prefWidth="121.0" text="Employee Name">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmName" layoutX="635.0" layoutY="261.0" prefHeight="34.0" prefWidth="175.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmTask1" layoutX="42.0" layoutY="259.0" prefHeight="34.0" prefWidth="121.0" text="Employee Nic">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEmnNic" layoutX="179.0" layoutY="261.0" prefHeight="34.0" prefWidth="175.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblId" layoutX="498.0" layoutY="148.0" text="Employee Id">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmId" layoutX="655.0" layoutY="142.0" prefHeight="30.0" prefWidth="146.0" promptText="E00" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </TextField>
+      <Label fx:id="lblName1" layoutX="418.0" layoutY="14.0" prefHeight="34.0" prefWidth="131.0" text="Machine">
+         <font>
+            <Font name="Segoe UI Symbol" size="19.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="372.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../Image/icons8-overlock-machine-50.png" />
+         </image>
+      </ImageView>
+      <Line endX="83.60003662109375" layoutX="450.0" layoutY="48.0" startX="-100.0" stroke="#2c5cfa" />
+      <Label fx:id="lblTask1" layoutX="41.0" layoutY="199.0" prefHeight="34.0" prefWidth="122.0" text="Machine Quantity">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQuantity" layoutX="176.0" layoutY="201.0" prefHeight="26.0" prefWidth="151.0" style="-fx-background-color: #fff; -fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0;">
+         <font>
+            <Font name="Calibri Bold" size="16.0" />
+         </font>
+      </TextField>
+      <ComboBox fx:id="cmbEmployeeContactNumber" layoutX="707.0" layoutY="201.0" onAction="#cmbEmployeeOnAction" prefHeight="26.0" prefWidth="147.0" style="-fx-border-color: #0652DD; -fx-border-width: 0 0 1px 0; -fx-background-color: #fff; -fx-scale-x: 1.2; -fx-scale-y: 1.2; -fx-scale-z: 1; -fx-translate-x: 1.2; -fx-translate-y: 1.2; -fx-translate-z: 0; -fx-opacity: 10; -fx-font-weight: bold;">
+         <effect>
+            <Blend>
+               <topInput>
+                  <ColorInput />
+               </topInput>
+            </Blend>
+         </effect>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ComboBox>
+      <Label fx:id="lblEmId" layoutX="801.0" layoutY="200.0" prefHeight="30.0" prefWidth="54.0">
+         <font>
+            <Font name="Calibri Bold Italic" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
