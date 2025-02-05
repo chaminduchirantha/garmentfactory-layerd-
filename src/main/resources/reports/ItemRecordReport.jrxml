@@ -1,0 +1,186 @@
+<!-- Created with Jaspersoft Studio version 7.0.0.final using JasperReports Library version 7.0.0-b478feaa9aab4375eba71de77b4ca138ad2f62aa  -->
+<jasperReport name="ItemRecordReport" language="java" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8da5ed62-e485-48a4-b1f0-6f6e2d6dfe12">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<query language="SQL"><![CDATA[select * from item_management]]></query>
+	<field name="item_id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="item_id"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_management"/>
+	</field>
+	<field name="item_price" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="item_price"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_management"/>
+	</field>
+	<field name="item_quantity_on_hand" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="item_quantity_on_hand"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_quantity_on_hand"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_management"/>
+	</field>
+	<field name="item_description" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="item_description"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_description"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_management"/>
+	</field>
+	<field name="item_quality" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="item_quality"/>
+		<property name="com.jaspersoft.studio.field.label" value="item_quality"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="item_management"/>
+	</field>
+	<group name="item_id">
+		<expression><![CDATA[$F{item_id}]]></expression>
+	</group>
+	<group name="item_price">
+		<expression><![CDATA[$F{item_price}]]></expression>
+	</group>
+	<group name="item_quantity_on_hand">
+		<expression><![CDATA[$F{item_quantity_on_hand}]]></expression>
+	</group>
+	<group name="item_description">
+		<expression><![CDATA[$F{item_description}]]></expression>
+	</group>
+	<group name="item_quality">
+		<expression><![CDATA[$F{item_quality}]]></expression>
+	</group>
+	<background splitType="Stretch"/>
+	<title height="79" splitType="Stretch">
+		<element kind="staticText" uuid="b61ab9e3-3376-49a6-b5f1-b8938147f6a7" x="-21" y="0" width="597" height="70" fontSize="26.0" hTextAlign="Justified" vTextAlign="Middle">
+			<text><![CDATA[                              Item Record Report]]></text>
+		</element>
+	</title>
+	<pageHeader height="185" splitType="Stretch">
+		<element kind="staticText" uuid="9faa25af-8189-44da-82e3-28469aec56dc" x="0" y="26" width="179" height="36" fontSize="16.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Item Description]]></text>
+		</element>
+		<element kind="staticText" uuid="f952997b-c7f1-47ad-83db-52ba40003ce0" x="0" y="62" width="179" height="36" fontSize="16.0" hTextAlign="Left" vTextAlign="Middle">
+			<text><![CDATA[          Item Price ]]></text>
+		</element>
+		<element kind="staticText" uuid="53de35e7-1de7-4000-beff-b3339a67f891" x="0" y="100" width="179" height="36" fontSize="16.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Item Quantity]]></text>
+		</element>
+		<element kind="staticText" uuid="8773a7b7-bfc7-4347-8668-f60b6ee7510f" x="0" y="136" width="179" height="36" fontSize="16.0" hTextAlign="Center" vTextAlign="Middle">
+			<text><![CDATA[Item Quality]]></text>
+		</element>
+		<element kind="textField" uuid="d2532ec9-c6b9-40d3-bed6-f66a42b3b6d2" x="180" y="65" width="193" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{item_price}]]></expression>
+		</element>
+		<element kind="textField" uuid="7ec61d62-16bd-47a3-a437-aa05defd6a5a" x="182" y="103" width="190" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{item_quantity_on_hand}]]></expression>
+		</element>
+		<element kind="textField" uuid="6173ade1-30c4-4246-9043-7b7b7d9dc216" x="180" y="29" width="190" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{item_description}]]></expression>
+		</element>
+		<element kind="textField" uuid="253b570d-f725-459b-97dd-aa2239b6725b" x="181" y="139" width="190" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+			<expression><![CDATA[$F{item_quality}]]></expression>
+		</element>
+	</pageHeader>
+	<columnHeader height="70" splitType="Stretch"/>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<element kind="textField" uuid="1e2880c3-38b8-4697-b541-1a2f0d1c9703" x="0" y="69" width="111" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_id}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0eebe86-1a05-4286-a8c9-075ffa80d36b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="5fb62d76-56c4-4e1e-a11f-f0bc4b68d2c4" x="111" y="69" width="111" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_price}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2cc06fa-bc72-48b2-8a78-7a6cef94f7f5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="06825265-491f-4258-92aa-71b88d4b56c8" x="333" y="69" width="111" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_description}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31db4117-378b-49d3-aa75-3d9f3bd40aa1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="bf9d7f0b-ea42-44fd-8153-c968cbfa28c1" x="444" y="69" width="111" height="30" fontSize="12.0" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_quality}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fde862a9-356c-49b7-ba54-019d7d35a78a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="2f0494cf-4356-421c-8d91-a8303e474686" x="0" y="39" width="111" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Item id]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d0eebe86-1a05-4286-a8c9-075ffa80d36b"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="34826bec-38ae-4e78-aefb-8b6f015790ab" x="111" y="39" width="111" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Item price]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f2cc06fa-bc72-48b2-8a78-7a6cef94f7f5"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="39cbff49-048a-4638-bc2e-59a7a7c708a5" x="222" y="39" width="111" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Item quantity ]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f4b6c11f-68ca-45eb-9a78-7b6291df9071"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="734e5f62-7409-4740-906a-67ab2d4d6d48" x="333" y="39" width="111" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Item description]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31db4117-378b-49d3-aa75-3d9f3bd40aa1"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="staticText" uuid="8cae683a-1616-4cdf-9882-39e17a03b7cf" x="444" y="39" width="111" height="30" fontSize="12.0" bold="true" hTextAlign="Center" vTextAlign="Middle">
+				<text><![CDATA[Item quality]]></text>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="fde862a9-356c-49b7-ba54-019d7d35a78a"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+			<element kind="textField" uuid="bd2b8370-292a-493c-ab1b-6a26f90255ee" x="222" y="69" width="111" height="30" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{item_quantity_on_hand}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="019cc96f-d875-40a7-8cb4-ec5e52fa026c"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="45" splitType="Stretch"/>
+	<pageFooter height="54" splitType="Stretch"/>
+	<summary height="42" splitType="Stretch"/>
+</jasperReport>
