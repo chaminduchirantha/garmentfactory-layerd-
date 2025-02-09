@@ -16,10 +16,12 @@ public class MachineBoImpl implements MachineBo {
     MachineDao machineDao = (MachineDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.MACHINE);
     EmployeeDao employeeDao = (EmployeeDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.EMPLOYEE);
 
+    @Override
     public String getNextId() throws SQLException, ClassNotFoundException {
         return machineDao.getNextId();
     }
 
+    @Override
     public ArrayList<MachineDto> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<MachineDto> machineDtos = new ArrayList<>();
         ArrayList<Machine>machines = machineDao.getAll();
@@ -29,22 +31,27 @@ public class MachineBoImpl implements MachineBo {
         return machineDtos;
     }
 
+    @Override
     public boolean save(MachineDto machineDto) throws SQLException, ClassNotFoundException {
         return machineDao.save(machineDto);
     }
 
+    @Override
     public boolean update(MachineDto machineDto) throws SQLException, ClassNotFoundException {
         return machineDao.update(machineDto);
     }
 
+    @Override
     public boolean delete(String machineId) throws SQLException, ClassNotFoundException {
         return machineDao.delete(machineId);
     }
 
+    @Override
     public ArrayList<String> getAllEmployeeContactNumbers() throws SQLException, ClassNotFoundException {
         return employeeDao.getAllEmployeeContactNumbers();
     }
 
+    @Override
     public EmployeeDto findByContactNumber(String selectedEmId) throws SQLException, ClassNotFoundException{
         return employeeDao.findByContactNumber(selectedEmId);
     }

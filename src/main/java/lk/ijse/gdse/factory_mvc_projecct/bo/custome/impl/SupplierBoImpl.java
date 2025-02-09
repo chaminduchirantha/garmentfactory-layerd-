@@ -12,14 +12,17 @@ import java.util.ArrayList;
 public class SupplierBoImpl implements SupplierBo {
     SupplierDao supplierDao = (SupplierDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.SUPPLIER);
 
+    @Override
     public String getNextId() throws SQLException, ClassNotFoundException {
         return supplierDao.getNextId();
     }
 
+    @Override
     public boolean save(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
         return supplierDao.save((new Supplier(supplierDto.getSupplierId(),supplierDto.getSupplierName(),supplierDto.getSupplierAddress(),supplierDto.getSupplierAge(),supplierDto.getSupplierContactNumber(),supplierDto.getSupplierNICNumber())));
     }
 
+    @Override
     public ArrayList<SupplierDto> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<SupplierDto> supplierDtos = new ArrayList<>();
         ArrayList<Supplier>suppliers = supplierDao.getAll();
@@ -29,18 +32,22 @@ public class SupplierBoImpl implements SupplierBo {
         return supplierDtos;
     }
 
+    @Override
     public boolean update(SupplierDto supplierDto) throws SQLException, ClassNotFoundException {
         return supplierDao.update((new Supplier(supplierDto.getSupplierId(),supplierDto.getSupplierName(),supplierDto.getSupplierAddress(),supplierDto.getSupplierAge(),supplierDto.getSupplierNICNumber(),supplierDto.getSupplierContactNumber())));
     }
 
+    @Override
     public boolean delete(String supplierId) throws SQLException, ClassNotFoundException {
         return supplierDao.delete(supplierId);
     }
 
+    @Override
     public ArrayList<String> getAllSupplierIDs() throws SQLException, ClassNotFoundException {
        return supplierDao.getAllSupplierIDs();
     }
 
+    @Override
     public SupplierDto findById(String selectedSupId) throws SQLException, ClassNotFoundException {
         return supplierDao.findById(selectedSupId);
     }

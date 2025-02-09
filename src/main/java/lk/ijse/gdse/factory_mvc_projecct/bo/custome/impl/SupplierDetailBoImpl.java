@@ -10,6 +10,7 @@ import java.sql.SQLException;
 public class SupplierDetailBoImpl implements SupplierDetailBo {
     SupplierDetailDao supplierDetailDao = (SupplierDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.SUPPLIERDETAIL);
 
+    @Override
     public boolean saveSupplierDetails(SupplierDetail supplierDetail) throws SQLException, ClassNotFoundException {
         return supplierDetailDao.saveSupplierDetails(supplierDetail);
     }

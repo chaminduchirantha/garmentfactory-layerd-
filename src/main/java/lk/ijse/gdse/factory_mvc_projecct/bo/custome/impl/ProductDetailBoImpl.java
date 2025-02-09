@@ -12,6 +12,7 @@ import java.util.ArrayList;
 public class ProductDetailBoImpl implements ProductDetailBo {
     ProductDetailDao productDetailDao = (ProductDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PRODUCTDETAIL);
 
+    @Override
     public boolean saveProductDetailsList(ArrayList<ProductDetailDto> productDetails) throws SQLException, ClassNotFoundException {
         ArrayList<ProductDetail> products = new ArrayList<ProductDetail>();
 
@@ -33,6 +34,7 @@ public class ProductDetailBoImpl implements ProductDetailBo {
 
     }
 
+    @Override
     public boolean saveProductDetail(ProductDetailDto productDetailDto) throws SQLException, ClassNotFoundException {
         ProductDetail productDetail = new ProductDetail();
 

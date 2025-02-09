@@ -15,10 +15,12 @@ public class PaymentBoImpl implements PaymentBo {
     PaymentDao paymentDao = (PaymentDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PAYMENT);
     SupplierDao supplierDao = (SupplierDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.SUPPLIER);
 
+    @Override
     public String getNextId() throws SQLException, ClassNotFoundException{
         return paymentDao.getNextId();
     }
 
+    @Override
     public ArrayList<PaymentDto> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<PaymentDto> paymentDtos = new ArrayList<>();
         ArrayList<Payment> payments = paymentDao.getAll();
@@ -28,22 +30,27 @@ public class PaymentBoImpl implements PaymentBo {
         return paymentDtos;
     }
 
+    @Override
     public boolean save(PaymentDto paymentDto) throws SQLException, ClassNotFoundException {
         return paymentDao.save(new Payment(paymentDto.getPaymentId(),paymentDto.getPaymentDate(),paymentDto.getPaymentAmount(),paymentDto.getDiscount(),paymentDto.getSupplierId()));
     }
 
+    @Override
     public boolean update(PaymentDto paymentDto) throws SQLException, ClassNotFoundException {
         return paymentDao.update(new Payment(paymentDto.getPaymentId(),paymentDto.getPaymentDate(),paymentDto.getPaymentAmount(),paymentDto.getDiscount(),paymentDto.getSupplierId()));
     }
 
+    @Override
     public boolean delete(String paymentId) throws SQLException, ClassNotFoundException {
         return paymentDao.delete(paymentId);
     }
 
+    @Override
     public ArrayList<String> getAllSupplierIDs() throws SQLException, ClassNotFoundException {
         return supplierDao.getAllSupplierIDs();
     }
 
+    @Override
     public SupplierDto findById(String selectedSupId) throws SQLException, ClassNotFoundException {
         return supplierDao.findById(selectedSupId);
     }

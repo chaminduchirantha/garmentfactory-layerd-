@@ -20,10 +20,12 @@ public class ProductBoImpl implements ProductBo {
     StockDao stockDao = (StockDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.STOCK);
     ProductDetailDao productDetailDao = (ProductDetailDao) DaoFactory.getInstance().getDao(DaoFactory.DaoType.PRODUCTDETAIL);
 
+    @Override
     public ArrayList<String> getAllItemIDs() throws SQLException, ClassNotFoundException {
         return stockDao.getAllItemIDs();
     }
 
+    @Override
     public boolean saveProduct(ProductDto productDto) throws SQLException, ClassNotFoundException {
 
         Connection connection = DBConnection.getInstance().getConnection();
