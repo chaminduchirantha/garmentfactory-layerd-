@@ -236,15 +236,15 @@ public class EmployeeController implements Initializable {
 
            ObservableList<EmployeeTm> employeeTms = FXCollections.observableArrayList();
 
-           for (EmployeeDto entity : employees) {
+           for (EmployeeDto employeeDto : employees) {
                EmployeeTm employeeTm = new EmployeeTm(
-                       entity.getEmployeeId(),
-                       entity.getEmployeeName(),
-                       entity.getEmployeeAge(),
-                       entity.getEmployeeAddress(),
-                       entity.getEmployeeSection(),
-                       entity.getEmployeeNic(),
-                       entity.getEmployeeContactNumber()
+                       employeeDto.getEmployeeId(),
+                       employeeDto.getEmployeeName(),
+                       employeeDto.getEmployeeAge(),
+                       employeeDto.getEmployeeAddress(),
+                       employeeDto.getEmployeeSection(),
+                       employeeDto.getEmployeeNic(),
+                       employeeDto.getEmployeeContactNumber()
                );
                employeeTms.add(employeeTm);
            }
