@@ -3,7 +3,6 @@ package lk.ijse.gdse.factory_mvc_projecct.Dao.custome.impl;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.SqlUtil;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.EmployeeDao;
 import lk.ijse.gdse.factory_mvc_projecct.Entity.Employee;
-import lk.ijse.gdse.factory_mvc_projecct.dto.EmployeeDto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -85,11 +84,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
     }
 
     @Override
-    public EmployeeDto findByContactNumber(String selectedEmId) throws SQLException, ClassNotFoundException {
+    public Employee findByContactNumber(String selectedEmId) throws SQLException, ClassNotFoundException {
         ResultSet rst = SqlUtil.execute("select * from employee where employee_contact_number=?", selectedEmId);
 
         if (rst.next()) {
-            return new EmployeeDto(rst.getString(1), rst.getString(2), rst.getInt(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
+            return new Employee(rst.getString(1), rst.getString(2), rst.getInt(3), rst.getString(4), rst.getString(5), rst.getString(6), rst.getString(7));
         }
         return null;
     }

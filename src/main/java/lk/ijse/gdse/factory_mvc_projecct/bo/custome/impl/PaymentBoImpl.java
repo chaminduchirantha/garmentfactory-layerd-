@@ -4,6 +4,7 @@ import lk.ijse.gdse.factory_mvc_projecct.Dao.DaoFactory;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.PaymentDao;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.SupplierDao;
 import lk.ijse.gdse.factory_mvc_projecct.Entity.Payment;
+import lk.ijse.gdse.factory_mvc_projecct.Entity.Supplier;
 import lk.ijse.gdse.factory_mvc_projecct.bo.custome.PaymentBo;
 import lk.ijse.gdse.factory_mvc_projecct.dto.PaymentDto;
 import lk.ijse.gdse.factory_mvc_projecct.dto.SupplierDto;
@@ -52,6 +53,6 @@ public class PaymentBoImpl implements PaymentBo {
 
     @Override
     public SupplierDto findById(String selectedSupId) throws SQLException, ClassNotFoundException {
-        return supplierDao.findById(selectedSupId);
-    }
+        Supplier supplier = supplierDao.findById(selectedSupId);
+        return new SupplierDto(supplier.getSupplierId(),supplier.getSupplierName(),supplier.getSupplierAddress(),supplier.getSupplierAge(),supplier.getSupplierContactNumber(),supplier.getSupplierNICNumber());    }
 }

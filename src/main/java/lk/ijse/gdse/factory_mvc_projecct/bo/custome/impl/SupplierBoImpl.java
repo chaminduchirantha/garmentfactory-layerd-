@@ -49,6 +49,7 @@ public class SupplierBoImpl implements SupplierBo {
 
     @Override
     public SupplierDto findById(String selectedSupId) throws SQLException, ClassNotFoundException {
-        return supplierDao.findById(selectedSupId);
+        Supplier supplier = supplierDao.findById(selectedSupId);
+        return new SupplierDto(supplier.getSupplierId(),supplier.getSupplierName(),supplier.getSupplierAddress(),supplier.getSupplierAge(),supplier.getSupplierContactNumber(),supplier.getSupplierNICNumber());
     }
 }

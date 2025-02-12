@@ -3,6 +3,7 @@ package lk.ijse.gdse.factory_mvc_projecct.bo.custome.impl;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.DaoFactory;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.EmployeeDao;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.MachineDao;
+import lk.ijse.gdse.factory_mvc_projecct.Entity.Employee;
 import lk.ijse.gdse.factory_mvc_projecct.Entity.Machine;
 import lk.ijse.gdse.factory_mvc_projecct.bo.custome.MachineBo;
 import lk.ijse.gdse.factory_mvc_projecct.dto.EmployeeDto;
@@ -53,6 +54,7 @@ public class MachineBoImpl implements MachineBo {
 
     @Override
     public EmployeeDto findByContactNumber(String selectedEmId) throws SQLException, ClassNotFoundException{
-        return employeeDao.findByContactNumber(selectedEmId);
+        Employee employee = employeeDao.findByContactNumber(selectedEmId);
+        return new EmployeeDto(employee.getEmployeeId(),employee.getEmployeeName(),employee.getEmployeeAge(),employee.getEmployeeAddress(),employee.getEmployeeSection(),employee.getEmployeeNic(),employee.getEmployeeContactNumber()) ;
     }
 }

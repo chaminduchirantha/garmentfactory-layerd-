@@ -3,7 +3,6 @@ package lk.ijse.gdse.factory_mvc_projecct.Dao.custome.impl;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.SqlUtil;
 import lk.ijse.gdse.factory_mvc_projecct.Dao.custome.SupplierDao;
 import lk.ijse.gdse.factory_mvc_projecct.Entity.Supplier;
-import lk.ijse.gdse.factory_mvc_projecct.dto.SupplierDto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -61,11 +60,11 @@ public class SupplierDaoImpl implements SupplierDao {
         return supplierIds;
     }
 
-    public SupplierDto findById(String selectedSupId) throws SQLException, ClassNotFoundException {
+    public Supplier findById(String selectedSupId) throws SQLException, ClassNotFoundException {
         ResultSet rst = SqlUtil.execute("select * from supplier_management where supplier_id=?", selectedSupId);
 
         if (rst.next()) {
-            return new SupplierDto(rst.getString(1), rst.getString(2), rst.getString(3), rst.getInt(4), rst.getString(5), rst.getString(6));
+            return new Supplier(rst.getString(1), rst.getString(2), rst.getString(3), rst.getInt(4), rst.getString(5), rst.getString(6));
 
         }
         return null;
