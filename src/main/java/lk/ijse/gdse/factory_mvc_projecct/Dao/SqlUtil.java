@@ -19,8 +19,8 @@ public class SqlUtil {
             return (T)resultSet;
         }else {
             int i = preparedStatement.executeUpdate();
-            boolean isSaved = i > 0;
-            return (T) ((Boolean) isSaved);
+            boolean isExecute = i > 0;
+            return (T) ((Boolean) isExecute);
         }
     }
 }

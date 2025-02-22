@@ -1,6 +1,6 @@
 package lk.ijse.gdse.factory_mvc_projecct.controller;
 
-import javafx.animation.TranslateTransition;
+import  javafx.animation.TranslateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;

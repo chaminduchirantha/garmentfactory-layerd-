@@ -47,11 +47,12 @@ public class AttendanceBoImpl implements AttendanceBo {
        return attendanceDao.delete(AttendenceId);
     }
 
-
+    @Override
     public ArrayList<String> getAllEmployeeContactNumbers() throws SQLException, ClassNotFoundException {
         return employeeDao.getAllEmployeeContactNumbers();
     }
 
+    @Override
     public EmployeeDto findByContactNumber(String selectedEmId) throws SQLException, ClassNotFoundException{
         Employee employee = employeeDao.findByContactNumber(selectedEmId);
         return new EmployeeDto(employee.getEmployeeId(),employee.getEmployeeName(),employee.getEmployeeAge(),employee.getEmployeeAddress(),employee.getEmployeeSection(),employee.getEmployeeNic(),employee.getEmployeeContactNumber());

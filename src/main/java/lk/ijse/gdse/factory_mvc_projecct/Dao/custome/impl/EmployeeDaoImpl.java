@@ -13,11 +13,11 @@ public class EmployeeDaoImpl implements EmployeeDao {
     public String getNextId() throws SQLException, ClassNotFoundException {
         ResultSet resultSet = SqlUtil.execute( "select employee_id from employee order by employee_id desc limit 1");
         if (resultSet.next()) {
-            String employeeId = resultSet.getString(1);
-            String subString = employeeId.substring(1);
-            int i = Integer.parseInt(subString);
-            int newIndex = i+1;
-            return String.format("E%03d", newIndex);
+            String employeeId = resultSet.getString(1); //E005
+            String subString = employeeId.substring(1); //5 String
+            int i = Integer.parseInt(subString); //5 int
+            int newIndex = i+1; //6
+            return String.format("E%03d", newIndex); //E006
         }
         return "E001";
     }
